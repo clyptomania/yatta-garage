@@ -84,8 +84,8 @@ export default function Company() {
           contactPhoneNumber,
           registrationNumber,
           registerCourt,
-          }) => (
-          <section className="wrapper__info bg-white rounded-[24px] shadow-md p-8 my-8">
+          }, index) => (
+          <section key={index} className="wrapper__info bg-white rounded-[24px] shadow-md p-8 my-8">
             <div className="flex mb-8">
               <Image
                   className="" 

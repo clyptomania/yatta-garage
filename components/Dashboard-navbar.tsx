@@ -82,8 +82,8 @@ const DashboardNavbar = () => {
                     </button>
                 </div>
                 <div className="child flex justify-between text-white" id="nav-links">
-                    {navbarLinks.map(({ name, href, icon: Icon, iconId}) => (
-                        <Link href={href} className="flex m-auto font-yattaMono">
+                    {navbarLinks.map(({ name, href, icon: Icon, iconId}, index ) => (
+                        <Link key={index} href={href} className="flex m-auto font-yattaMono">
                             {name}
                             <Image 
                                 className="h-[1.2rem] m-auto" 
