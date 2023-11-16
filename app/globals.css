@@ -77,16 +77,16 @@ body {
 }
 
 p, h1, h2, h3, a {
-  font-family: "Yatta Hiro Grotesque" !important;
+  font-family: "Yatta Hiro Grotesque";
 }
 
 h1 {
-  font-weight: bold !important;
+  font-weight: bold;
   font-size: 27px;
 }
 
 h2 {
-  font-weight: bold !important;
+  font-weight: bold;
 }
 
 header {

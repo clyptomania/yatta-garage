@@ -2,14 +2,37 @@
 
 import React from "react";
 import Image from "next/image";
-import iconSearch from "../public/icons/search.svg";
-import iconNotification from "../public/icons/notification.svg";
-import iconProfile from "../public/icons/user-circle.svg";
-import iconPlus from "../public/icons/plus.svg";
-import iconCaretUp from "../public/icons/caret-up.svg";
-import iconCaretDown from "../public/icons/caret-down.svg";
-import iconCaretDouble from "../public/icons/caret-double-vertical.svg";
-import groupIconExample from "../public/icons/Group-240753.png";
+import iconSearch from "@/public/icons/search.svg";
+import iconNotification from "@/public/icons/notification.svg";
+import iconProfile from "@/public/icons/user-circle.svg";
+import iconPlus from "@/public/icons/plus.svg";
+import iconCaretUp from "@/public/icons/caret-up.svg";
+import iconCaretDown from "@/public/icons/caret-down.svg";
+import iconCaretDouble from "@/public/icons/caret-double-vertical.svg";
+import groupIconExample from "@/public/icons/Group-240753.png";
+import Link from "next/link";
+// import navbarLinks from "@/public/JSON/navbarLinks.json";
+
+const navbarLinks = [
+    {
+      name: "Solutions",
+      href: "/vision/solutions",
+      icon: iconCaretDown,
+      iconId: "icon-caret-down",
+    },
+    {
+      name: "Thoughts",
+      href: "/vision/thoughts",
+      icon: iconCaretDown,
+      iconId: "icon-caret-down",
+    },
+    {
+      name: "Developer",
+      href: "/vision/developer",
+      icon: iconCaretDown,
+      iconId: "icon-caret-down",
+    },
+  ];
 
 
 const DashboardNavbar = () => {
@@ -30,10 +53,10 @@ const DashboardNavbar = () => {
                         />
                         <div className="flex flex-col text-white px-3">
                             <p className="mr-auto leading-4" id="product-name">Honeycomb</p>
-                            <p className="text-[13px] opacity-60 mr-auto leading-3 pt-1" id="product-company">BeeToools GmbH</p>
+                            {/* <p className="text-[13px] opacity-60 mr-auto leading-3 pt-1" id="product-company">BeeToools GmbH</p> */}
                         </div>
                         <Image
-                            className="ml-auto" 
+                            className="ml-auto h-[1.1rem]" 
                             id="caret-double-icon"
                             src={iconCaretDouble}
                             alt="Caret Double Icon"
@@ -42,16 +65,16 @@ const DashboardNavbar = () => {
                     </button>
                 </div>
                 <div className="child w-[200px] mr-auto my-auto" id="add-group">
-                    <button className="flex m-auto py-1 px-2 border-solid border-white rounded-[8px] border-[1px]">
+                    <button className="flex m-auto h-[34px] py-1 px-2 border-solid border-white rounded-[8px] border-[1px]">
                         <Image 
-                            className="mr-1" 
+                            className="mr-1 h-[1.2rem] m-auto" 
                             id="add-group"
                             src={iconPlus}
                             alt="Add Group"
                             style={{}}
                         />
                         <Image 
-                            className="" 
+                            className="h-[1.2rem] m-auto" 
                             id="group-caret-down"
                             src={iconCaretDown}
                             alt="Add Group Dropdown"
@@ -60,9 +83,18 @@ const DashboardNavbar = () => {
                     </button>
                 </div>
                 <div className="child flex justify-between text-white" id="nav-links">
-                    <a className="m-auto">Link Uno</a>
-                    <a className="m-auto">Link Dos</a>
-                    <a className="m-auto">Link Tres</a>
+                    {navbarLinks.map(({ name, href, icon: Icon, iconId}) => (
+                        <Link href={href} className="flex m-auto font-yattaMono">
+                            {name}
+                            <Image 
+                                className="h-[1.2rem] m-auto" 
+                                id={iconId}
+                                src={Icon}
+                                alt={name}
+                                style={{}}
+                            />
+                        </Link>
+                    ))}
                 </div>
                 <div className="child flex justify-between px-3" id="nav-profile">
                     <Image 

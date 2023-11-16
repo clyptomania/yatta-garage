@@ -1,0 +1,45 @@
+[
+    {
+      "name": "Dashboard",
+      "href": "/vision/dashboard",
+      "icon": "iconDashboard",
+      "iconId": "icon-dashboard"
+    },
+    {
+      "name": "Company Profile",
+      "href": "/vision/company-profile",
+      "icon": "iconCompany",
+      "iconId": "icon-company"
+    },
+    {
+      "name": "Products",
+      "href": "/vision/products",
+      "icon": "iconProducts",
+      "iconId": "icon-products"
+    },
+    {
+      "name": "Payouts",
+      "href": "/vision/payouts",
+      "icon": "iconPayouts",
+      "iconId": "icon-payouts"
+    },
+    {
+      "name": "Payments",
+      "href": "/vision/payments",
+      "icon": "iconPayments",
+      "iconId": "icon-payments"
+    },
+    {
+      "name": "Active Subscriptions",
+      "href": "/vision/active-subscriptions",
+      "icon": "iconSubscription",
+      "iconId": "icon-subscriptions"
+    },
+    {
+      "name": "Member",
+      "href": "/vision/member",
+      "icon": "iconMember",
+      "iconId": "icon-member"
+    }
+  ]
+  

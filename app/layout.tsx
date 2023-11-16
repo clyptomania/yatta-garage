@@ -1,8 +1,29 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import localfont from "next/font/local"
 
 const inter = Inter({ subsets: ['latin'] })
+
+const yattaMono = localfont({
+  src: [
+    {
+    path: "../public/font/WOFF/HiroMono-Regular.woff",
+    weight: "normal",
+    },
+  ],
+  variable: "--font-hiro-mono",
+});
+
+const yattaSans = localfont({
+  src: [
+    {
+    path: "../public/font/WOFF/HiroGrotesque-Regular.woff",
+    weight: "normal",
+    },
+  ],
+  variable: "--font-hiro-sans",
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={' ${yattaMono.variable}, ${yattaSans.variable}'}>
       <body className={inter.className}>{children}</body>
     </html>
   )

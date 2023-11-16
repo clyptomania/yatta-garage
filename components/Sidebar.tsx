@@ -78,8 +78,9 @@ export default function Sidebar () {
             alt="Collapse Sidebar"
             style={{}}      
           />
-          </button>
-        <aside className="sidebar flex flex-col border col-span-1 h-screen pt-16 relative bg-white" id="sidebar" data-collapse={isCollapsedSidebar}>
+        </button>
+
+        <aside className="sidebar flex flex-col border col-span-1 h-screen pt-16 relative bg-white overflow-hidden" id="sidebar" data-collapse={isCollapsedSidebar}>
           <ul className="w-full mt-0 overflow-y-auto overflow-x-hidden" id="sidebar-list">
             {sidebarItems.map(({ name, href, icon: Icon, iconId }) => (
               <li className="flex items-center pl-4 h-[48px] hover:bg-[#F4F0FF] text-black hover:text-[#8649FF] hover:font-bold text-[15px]" key={name}>
@@ -107,6 +108,7 @@ export default function Sidebar () {
                 <span className="label ml-4">User Settings</span>
           </button>
         </aside>
+        
       </div>
     </>
   )
