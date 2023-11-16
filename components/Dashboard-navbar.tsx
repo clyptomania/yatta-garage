@@ -6,7 +6,6 @@ import iconSearch from "@/public/icons/search.svg";
 import iconNotification from "@/public/icons/notification.svg";
 import iconProfile from "@/public/icons/user-circle.svg";
 import iconPlus from "@/public/icons/plus.svg";
-import iconCaretUp from "@/public/icons/caret-up.svg";
 import iconCaretDown from "@/public/icons/caret-down.svg";
 import iconCaretDouble from "@/public/icons/caret-double-vertical.svg";
 import groupIconExample from "@/public/icons/Group-240753.png";
@@ -56,7 +55,7 @@ const DashboardNavbar = () => {
                             {/* <p className="text-[13px] opacity-60 mr-auto leading-3 pt-1" id="product-company">BeeToools GmbH</p> */}
                         </div>
                         <Image
-                            className="ml-auto h-[1.1rem]" 
+                            className="ml-auto h-[1rem]" 
                             id="caret-double-icon"
                             src={iconCaretDouble}
                             alt="Caret Double Icon"
