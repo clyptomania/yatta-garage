@@ -51,9 +51,9 @@ const Globe: React.FC = () => {
   `;
 
   // Listen to Mouse Position
-  const mouse = useRef({ x: undefined, y: undefined });
+  const mouse = useRef<{ x?: number; y?: number }>({});
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (event: { clientX: number; clientY: number; }) => {
     mouse.current = {
       x: (event.clientX / window.innerWidth) * 2 - 1,
       y: -(event.clientY / window.innerHeight) * 2 + 1,
