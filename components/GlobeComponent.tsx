@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 
 const Globe: React.FC = () => {
-  
   
   const containerRef = useRef<HTMLDivElement>(null);
   
@@ -14,7 +13,7 @@ const Globe: React.FC = () => {
 
     void main() {
       vertexUV = uv;
-      vertexNormal = normal;
+      vertexNormal = normalize(normalMatrix * normal);
       gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4( position, 1.0 );
     }
   `;
@@ -28,11 +27,44 @@ const Globe: React.FC = () => {
       float intensity = 1.05 - dot(
         vertexNormal, vec3(0.0, 0.0, 1.0));
       vec3 atmosphere = vec3(0.3, 0.6, 1.0) * pow(intensity, 1.5);
-      gl_FragColor = vec4(atmosphere + texture2D(globeTexture, vertexUV).xyz, 1.0);
+      gl_FragColor = vec4(atmosphere + texture2D(globeTexture, vertexUV).xyz, 0.9);
     }
   `;
 
+  const atmosphereVertexShader = `
+    varying vec3 vertexNormal;
+
+    void main() {
+      vertexNormal = normalize(normalMatrix * normal);
+      gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4( position, 0.9 );
+    }      
+  `;
+
+  const atmosphereFragmentShader = `
+    varying vec3 vertexNormal;
+
+    void main() {
+      float intensity = pow(0.5 - dot(vertexNormal, vec3(0, 0, 1.0)), 2.0);
+      gl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity;
+    }
+  `;
+
+  // Listen to Mouse Position
+  const mouse = useRef({ x: undefined, y: undefined });
+
+  const handleMouseMove = (event) => {
+    mouse.current = {
+      x: (event.clientX / window.innerWidth) * 2 - 1,
+      y: -(event.clientY / window.innerHeight) * 2 + 1,
+    };
+  };
+  
+  
+  
   useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+
+
     // Code inside useEffect will run only on the client side
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -53,10 +85,10 @@ const Globe: React.FC = () => {
         Use the onload event of the TextureLoader to check when the image is ready: */
     const textureLoader = new THREE.TextureLoader();
 
+    // Create Globe
     const sphere = new THREE.Mesh(
       new THREE.SphereGeometry(3, 50, 50),
       new THREE.ShaderMaterial({ 
-        // map: texture
         vertexShader ,
         fragmentShader,
         uniforms: {       //declare all variable to pass through shader
@@ -69,7 +101,25 @@ const Globe: React.FC = () => {
        })
     );
 
-    scene.add(sphere);
+    // Create Atmosphere
+    const atmosphere = new THREE.Mesh(
+      new THREE.SphereGeometry(3, 50, 50),
+      new THREE.ShaderMaterial({ 
+        vertexShader: atmosphereVertexShader ,
+        fragmentShader: atmosphereFragmentShader,
+        blending: THREE.AdditiveBlending,
+        side: THREE.BackSide
+        })
+    );
+
+    atmosphere.scale.set(1.2, 1.2, 1.2);
+
+    scene.add(atmosphere); 
+
+    const group = new THREE.Group()
+    group.add(sphere);
+    scene.add(group);
+
     camera.position.z = 10;
 
     // Animation/rendering loop
@@ -77,17 +127,18 @@ const Globe: React.FC = () => {
       requestAnimationFrame(animate);
 
       // Rotate the sphere
-      // sphere.rotation.y += 0.01; // Adjust the rotation speed as needed
-
+      sphere.rotation.y += 0.001; // Adjust the rotation speed as needed
+      console.log("inside function" + mouse.current);
+      group.rotation.y = mouse.current.x !== undefined ? mouse.current.x * 0.2 : 0;
       renderer.render(scene, camera);
     }
-
     animate();
 
     containerRef.current?.appendChild(renderer.domElement);
 
     return () => {
       renderer.dispose();
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []); // The empty dependency array ensures that useEffect runs only once on mount
 
