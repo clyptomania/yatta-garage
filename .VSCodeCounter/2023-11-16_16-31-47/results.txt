@@ -1,0 +1,98 @@
+Date : 2023-11-16 16:31:47
+Directory : c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar
+Total : 50 files,  5585 codes, 16 comments, 153 blanks, all 5754 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          8 |      4,497 |          0 |          5 |      4,502 |
+| TypeScript JSX     |         12 |        700 |         12 |         74 |        786 |
+| XML                |         23 |        137 |          0 |         19 |        156 |
+| CSS                |          1 |        129 |          0 |         26 |        155 |
+| SCSS               |          1 |         37 |          1 |          6 |         44 |
+| JSON with Comments |          1 |         25 |          2 |          1 |         28 |
+| TypeScript         |          1 |         24 |          0 |          3 |         27 |
+| Markdown           |          1 |         23 |          0 |         14 |         37 |
+| JavaScript         |          2 |         13 |          1 |          5 |         19 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                          | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                             |         50 |      5,585 |         16 |        153 |      5,754 |
+| . (Files)                                                                                                     |          8 |      4,515 |          3 |         26 |      4,544 |
+| app                                                                                                           |          8 |        462 |          4 |         63 |        529 |
+| app (Files)                                                                                                   |          4 |        249 |          1 |         41 |        291 |
+| app\(sketches)                                                                                                |          4 |        213 |          3 |         22 |        238 |
+| app\(sketches)\navbar                                                                                         |          1 |         86 |          1 |          8 |         95 |
+| app\(sketches)\vision                                                                                         |          3 |        127 |          2 |         14 |        143 |
+| app\(sketches)\vision (Files)                                                                                 |          1 |         11 |          2 |          3 |         16 |
+| app\(sketches)\vision\company-profile                                                                         |          1 |        105 |          0 |          8 |        113 |
+| app\(sketches)\vision\dashboard                                                                               |          1 |         11 |          0 |          3 |         14 |
+| components                                                                                                    |          6 |        404 |          9 |         43 |        456 |
+| public                                                                                                        |         28 |        204 |          0 |         21 |        225 |
+| public\JSON                                                                                                   |          2 |         64 |          0 |          2 |         66 |
+| public\icons                                                                                                  |         19 |         78 |          0 |         19 |         97 |
+| public\lottie                                                                                                 |          3 |          3 |          0 |          0 |          3 |
+| public\lottie\yattaLogo                                                                                       |          3 |          3 |          0 |          0 |          3 |
+| public\svg                                                                                                    |          4 |         59 |          0 |          0 |         59 |
++---------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                                      | language           | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\.eslintrc.json                                 | JSON               |          3 |          0 |          1 |          4 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\README.md                                      | Markdown           |         23 |          0 |         14 |         37 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\(sketches)\navbar\page.tsx                 | TypeScript JSX     |         86 |          1 |          8 |         95 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\(sketches)\vision\company-profile\page.tsx | TypeScript JSX     |        105 |          0 |          8 |        113 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\(sketches)\vision\dashboard\page.tsx       | TypeScript JSX     |         11 |          0 |          3 |         14 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\(sketches)\vision\page.tsx                 | TypeScript JSX     |         11 |          2 |          3 |         16 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\globals.css                                | CSS                |        129 |          0 |         26 |        155 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\layout.tsx                                 | TypeScript JSX     |         38 |          0 |          6 |         44 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\page.tsx                                   | TypeScript JSX     |         45 |          0 |          3 |         48 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\variables.module.scss                      | SCSS               |         37 |          1 |          6 |         44 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\BaseLayout.tsx                      | TypeScript JSX     |         22 |          0 |          2 |         24 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\Dashboard-navbar.tsx                | TypeScript JSX     |        119 |          2 |          5 |        126 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\Header-section.tsx                  | TypeScript JSX     |         20 |          1 |          6 |         27 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\Navbar.tsx                          | TypeScript JSX     |        109 |          5 |         18 |        132 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\Purple-section.tsx                  | TypeScript JSX     |         27 |          1 |          3 |         31 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\Sidebar.tsx                         | TypeScript JSX     |        107 |          0 |          9 |        116 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\next.config.js                                 | JavaScript         |          7 |          1 |          4 |         12 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\package-lock.json                              | JSON               |      4,396 |          0 |          1 |      4,397 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\package.json                                   | JSON               |         31 |          0 |          1 |         32 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\postcss.config.js                              | JavaScript         |          6 |          0 |          1 |          7 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\JSON\navbarLinks.json                   | JSON               |         20 |          0 |          1 |         21 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\JSON\sidebarItems.json                  | JSON               |         44 |          0 |          1 |         45 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\caret-double-vertical.svg         | XML                |          6 |          0 |          1 |          7 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\caret-down.svg                    | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\caret-up.svg                      | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\collapse.svg                      | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\contact.svg                       | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\credit-card.svg                   | XML                |          4 |          0 |          1 |          5 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\dashboard.svg                     | XML                |          6 |          0 |          1 |          7 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\general.svg                       | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\notification.svg                  | XML                |          4 |          0 |          1 |          5 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\office.svg                        | XML                |          6 |          0 |          1 |          7 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\payouts.svg                       | XML                |          4 |          0 |          1 |          5 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\plus.svg                          | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\product.svg                       | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\registration.svg                  | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\search.svg                        | XML                |          3 |          0 |          1 |          4 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\settings.svg                      | XML                |          8 |          0 |          1 |          9 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\subscription.svg                  | XML                |          4 |          0 |          1 |          5 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\user-circle.svg                   | XML                |          4 |          0 |          1 |          5 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\user-group.svg                    | XML                |          5 |          0 |          1 |          6 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\lottie\yattaLogo\logoOnHover.json       | JSON               |          1 |          0 |          0 |          1 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\lottie\yattaLogo\logoOnPageLoad.json    | JSON               |          1 |          0 |          0 |          1 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\lottie\yattaLogo\logoOnScroll.json      | JSON               |          1 |          0 |          0 |          1 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\svg\yatta_logo_hiro_white.svg           | XML                |         17 |          0 |          0 |         17 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\svg\yatta_section_purple_01.svg         | XML                |         14 |          0 |          0 |         14 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\svg\yatta_section_purple_02.svg         | XML                |         14 |          0 |          0 |         14 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\svg\yatta_section_purple_03.svg         | XML                |         14 |          0 |          0 |         14 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\tailwind.config.ts                             | TypeScript         |         24 |          0 |          3 |         27 |
+| c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\tsconfig.json                                  | JSON with Comments |         25 |          2 |          1 |         28 |
+| Total                                                                                                         |                    |      5,585 |         16 |        153 |      5,754 |
++---------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

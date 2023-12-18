@@ -1,0 +1,52 @@
+"filename", "language", "JSON", "JavaScript", "JSON with Comments", "TypeScript", "Markdown", "TypeScript JSX", "SCSS", "XML", "CSS", "comment", "blank", "total"
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\.eslintrc.json", "JSON", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\README.md", "Markdown", 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 14, 37
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\(sketches)\navbar\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 86, 0, 0, 0, 1, 8, 95
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\(sketches)\vision\company-profile\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 105, 0, 0, 0, 0, 8, 113
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\(sketches)\vision\dashboard\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 3, 14
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\(sketches)\vision\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 11, 0, 0, 0, 2, 3, 16
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\globals.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 129, 0, 26, 155
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 38, 0, 0, 0, 0, 6, 44
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 45, 0, 0, 0, 0, 3, 48
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\app\variables.module.scss", "SCSS", 0, 0, 0, 0, 0, 0, 37, 0, 0, 1, 6, 44
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\BaseLayout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 2, 24
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\Dashboard-navbar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 119, 0, 0, 0, 2, 5, 126
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\Header-section.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 20, 0, 0, 0, 1, 6, 27
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\Navbar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 109, 0, 0, 0, 5, 18, 132
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\Purple-section.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 27, 0, 0, 0, 1, 3, 31
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\components\Sidebar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 107, 0, 0, 0, 0, 9, 116
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\next.config.js", "JavaScript", 0, 7, 0, 0, 0, 0, 0, 0, 0, 1, 4, 12
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\package-lock.json", "JSON", 4396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4397
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\package.json", "JSON", 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 32
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\postcss.config.js", "JavaScript", 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\JSON\navbarLinks.json", "JSON", 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 21
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\JSON\sidebarItems.json", "JSON", 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 45
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\caret-double-vertical.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 1, 7
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\caret-down.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\caret-up.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\collapse.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\contact.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\credit-card.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 5
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\dashboard.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 1, 7
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\general.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\notification.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 5
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\office.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 1, 7
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\payouts.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 5
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\plus.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\product.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\registration.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\search.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\settings.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 1, 9
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\subscription.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 5
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\user-circle.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 5
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\icons\user-group.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 1, 6
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\lottie\yattaLogo\logoOnHover.json", "JSON", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\lottie\yattaLogo\logoOnPageLoad.json", "JSON", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\lottie\yattaLogo\logoOnScroll.json", "JSON", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\svg\yatta_logo_hiro_white.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 17
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\svg\yatta_section_purple_01.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 14
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\svg\yatta_section_purple_02.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 14
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\public\svg\yatta_section_purple_03.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 14
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\tailwind.config.ts", "TypeScript", 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 3, 27
+"c:\Users\ken.rodenwaldt\Front-End Projects\nextjs\yatta-navbar\tsconfig.json", "JSON with Comments", 0, 0, 25, 0, 0, 0, 0, 0, 0, 2, 1, 28
+"Total", "-", 4497, 13, 25, 24, 23, 700, 37, 137, 129, 16, 153, 5754
