@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import gsap from "gsap";
 
 
 const Globe: React.FC = () => {
@@ -77,6 +78,7 @@ const Globe: React.FC = () => {
     const renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setSize(innerWidth, innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setClearColor(new THREE.Color("#181C42"), 1);
 
     // Create the 3D object here
 
@@ -93,7 +95,7 @@ const Globe: React.FC = () => {
         fragmentShader,
         uniforms: {       //declare all variable to pass through shader
           globeTexture: {
-            value: textureLoader.load("/image/8081_earthbump4k.jpg", () => {
+            value: textureLoader.load("/image/The-earth-at-night-2.jpg", () => {
               animate();
             })
           }
@@ -127,9 +129,14 @@ const Globe: React.FC = () => {
       requestAnimationFrame(animate);
 
       // Rotate the sphere
-      sphere.rotation.y += 0.001; // Adjust the rotation speed as needed
-      console.log("inside function" + mouse.current);
-      group.rotation.y = mouse.current.x !== undefined ? mouse.current.x * 0.2 : 0;
+      sphere.rotation.y += 0.002; // Adjust the rotation speed as needed
+      const rotationValueX = mouse.current.x !== undefined ? (mouse.current.x as number) * 0.5 : 0;
+      const rotationValueY = mouse.current.y !== undefined ? (mouse.current.y as number) * 0.3 : 0;
+      gsap.to(group.rotation, { 
+        y: rotationValueX,
+        x: -rotationValueY,
+        duration: 2 
+      });
       renderer.render(scene, camera);
     }
     animate();
