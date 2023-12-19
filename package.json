@@ -20,6 +20,7 @@
     "raw-loader": "^4.0.2",
     "react": "^18",
     "react-dom": "^18.2.0",
+    "react-globe.gl": "^2.27.1",
     "sass": "^1.69.5",
     "save-dev": "^0.0.1-security",
     "three": "^0.159.0",

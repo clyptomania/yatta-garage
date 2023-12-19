@@ -1,0 +1,16 @@
+{
+    "type": "PullRequest",
+    "pulls": [
+        {
+            "type" : "pull",
+            "order": 1,
+            "from" : "FA",
+            "to" : "NYC",
+            "startLat": "50.11512182540586",
+            "startLng": "8.670123143025664",
+            "endLat": "40.765702209654265",
+            "endLng": "-74.06760595282901",
+            "arcAlt" : 0.05
+        }
+    ]
+}

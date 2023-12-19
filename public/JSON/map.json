@@ -1,0 +1,21 @@
+{
+    "type" : "Map",
+    "Co-ordinates" :  [
+        {
+            "text" : "FA",
+            "size" : 1.0,
+            "Country" : "Germany",
+            "City" : "Frankfurt",
+            "lat" : "50.11512182540586",
+            "lng" : "8.670123143025664"
+        },
+        {
+            "text" : "NYC",
+            "size" : 1.0,
+            "Country" : "USA",
+            "City" : "New York",
+            "lat" : "40.765702209654265",
+            "lng" : "-74.06760595282901"
+        }
+    ] 
+}

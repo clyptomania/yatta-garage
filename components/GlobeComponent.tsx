@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
+import ThreeGlobe from "three-globe";
+import lines from "@/public/JSON/lines.json";
+import map from "@/public/JSON/map.json";
 
 
 const Globe: React.FC = () => {
   
   const containerRef = useRef<HTMLDivElement>(null);
+
+  /* ----------------------Boilerplat code for shader compilation------------------------ */
   
-  // Boilerplat code for shader compilation
   const vertexShader = `
     varying vec2 vertexUV;
     varying vec3 vertexNormal;
@@ -45,12 +49,13 @@ const Globe: React.FC = () => {
     varying vec3 vertexNormal;
 
     void main() {
-      float intensity = pow(0.5 - dot(vertexNormal, vec3(0, 0, 1.0)), 2.0);
+      float intensity = pow(0.3 - dot(vertexNormal, vec3(0, 0, 1.0)), 2.0);
       gl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity;
     }
   `;
 
-  // Listen to Mouse Position
+    /* -------------------------Declare Mouse XY Position--------------------------- */
+
   const mouse = useRef<{ x?: number; y?: number }>({});
 
   const handleMouseMove = (event: { clientX: number; clientY: number; }) => {
@@ -60,13 +65,35 @@ const Globe: React.FC = () => {
     };
   };
   
-  
+  const Globe = new ThreeGlobe({
+    waitForGlobeReady: true,
+    animateIn: true,
+  })
+
+  setTimeout(() => {
+    Globe.arcsData(lines.pulls)
+    .arcColor((e) => {
+      return e.status? "#9cff00":"#ff4000";
+    })
+    .arcAltitude((e) => {
+      return e.arcAlt;
+    })
+    .arcStroke((e) => {
+      return e.status? 0.5 : 0.3
+    })
+    .arcDashLength(0.9)
+    .arcDashGap(4)
+    .arcDashAnimateTime(1000)
+    .arcsTransitionDuration(1000)
+    .arcDashInitialGap((e) => e.order*1)
+    .labelsData(map.Map)
+    .labelColor(() => "#ffcb21")
+  })
   
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove);
 
-
-    // Code inside useEffect will run only on the client side
+    // Will run only on the client side
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -80,7 +107,7 @@ const Globe: React.FC = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor(new THREE.Color("#181C42"), 1);
 
-    // Create the 3D object here
+     /* ---------------------------Create 3D Object----------------------------- */
 
     /*  Loading images asynchronously can sometimes cause timing issues. 
         Ensure that the image is fully loaded before rendering the scene. 
@@ -103,6 +130,9 @@ const Globe: React.FC = () => {
        })
     );
 
+    const group = new THREE.Group()
+    group.add(sphere);
+
     // Create Atmosphere
     const atmosphere = new THREE.Mesh(
       new THREE.SphereGeometry(3, 50, 50),
@@ -114,12 +144,9 @@ const Globe: React.FC = () => {
         })
     );
 
-    atmosphere.scale.set(1.2, 1.2, 1.2);
+    atmosphere.scale.set(1.1, 1.1, 1.1);
 
     scene.add(atmosphere); 
-
-    const group = new THREE.Group()
-    group.add(sphere);
     scene.add(group);
 
     camera.position.z = 10;
