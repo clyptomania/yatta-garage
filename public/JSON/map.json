@@ -1,21 +1,173 @@
 {
-    "type" : "Map",
-    "Co-ordinates" :  [
-        {
-            "text" : "FA",
-            "size" : 1.0,
-            "Country" : "Germany",
-            "City" : "Frankfurt",
-            "lat" : "50.11512182540586",
-            "lng" : "8.670123143025664"
-        },
-        {
-            "text" : "NYC",
-            "size" : 1.0,
-            "Country" : "USA",
-            "City" : "New York",
-            "lat" : "40.765702209654265",
-            "lng" : "-74.06760595282901"
-        }
-    ] 
+  "type": "Map",
+  "Co-ordinates": [
+    {
+      "text": "FA",
+      "size": 1.0,
+      "Country": "Germany",
+      "City": "Frankfurt",
+      "lat": "50.11512182540586",
+      "lng": "8.670123143025664"
+    },
+    {
+        "text": "New York",
+        "size": 1.0,
+        "Country": "USA",
+        "City": "New York",
+        "lat": "40.7128",
+        "lng": "-74.0060"
+    },
+    {
+        "text": "São Paulo",
+        "size": 1.0,
+        "Country": "Brazil",
+        "City": "São Paulo",
+        "lat": "-23.5505",
+        "lng": "-46.6333"
+    },
+    {
+        "text": "London",
+        "size": 1.0,
+        "Country": "United Kingdom",
+        "City": "London",
+        "lat": "51.5074",
+        "lng": "-0.1278"
+    },
+    {
+        "text": "Cairo",
+        "size": 1.0,
+        "Country": "Egypt",
+        "City": "Cairo",
+        "lat": "30.0444",
+        "lng": "31.2357"
+    },
+    {
+        "text": "Moscow",
+        "size": 1.0,
+        "Country": "Russia",
+        "City": "Moscow",
+        "lat": "55.7558",
+        "lng": "37.6176"
+    },
+    {
+        "text": "Beijing",
+        "size": 1.0,
+        "Country": "China",
+        "City": "Beijing",
+        "lat": "39.9042",
+        "lng": "116.4074"
+    },
+    {
+        "text": "Tokyo",
+        "size": 1.0,
+        "Country": "Japan",
+        "City": "Tokyo",
+        "lat": "35.6895",
+        "lng": "139.6917"
+    },
+    {
+        "text": "Sydney",
+        "size": 1.0,
+        "Country": "Australia",
+        "City": "Sydney",
+        "lat": "-33.8688",
+        "lng": "151.2093"
+    },
+    {
+        "text": "Johannesburg",
+        "size": 1.0,
+        "Country": "South Africa",
+        "City": "Johannesburg",
+        "lat": "-26.2041",
+        "lng": "28.0473"
+    },
+    {
+        "text": "Istanbul",
+        "size": 1.0,
+        "Country": "Turkey",
+        "City": "Istanbul",
+        "lat": "41.0082",
+        "lng": "28.9784"
+    },
+    {
+        "text": "Mumbai",
+        "size": 1.0,
+        "Country": "India",
+        "City": "Mumbai",
+        "lat": "19.0760",
+        "lng": "72.8777"
+    },
+    {
+        "text": "Seoul",
+        "size": 1.0,
+        "Country": "South Korea",
+        "City": "Seoul",
+        "lat": "37.5665",
+        "lng": "126.9780"
+    },
+    {
+        "text": "Mexico City",
+        "size": 1.0,
+        "Country": "Mexico",
+        "City": "Mexico City",
+        "lat": "19.4326",
+        "lng": "-99.1332"
+    },
+    {
+        "text": "Toronto",
+        "size": 1.0,
+        "Country": "Canada",
+        "City": "Toronto",
+        "lat": "43.6511",
+        "lng": "-79.3832"
+    },
+    {
+        "text": "Paris",
+        "size": 1.0,
+        "Country": "France",
+        "City": "Paris",
+        "lat": "48.8566",
+        "lng": "2.3522"
+    },
+    {
+        "text": "Buenos Aires",
+        "size": 1.0,
+        "Country": "Argentina",
+        "City": "Buenos Aires",
+        "lat": "-34.6037",
+        "lng": "-58.3816"
+    },
+    {
+        "text": "Lagos",
+        "size": 1.0,
+        "Country": "Nigeria",
+        "City": "Lagos",
+        "lat": "6.5244",
+        "lng": "3.3792"
+    },
+    {
+        "text": "Jakarta",
+        "size": 1.0,
+        "Country": "Indonesia",
+        "City": "Jakarta",
+        "lat": "-6.2088",
+        "lng": "106.8456"
+    },
+    {
+        "text": "Dubai",
+        "size": 1.0,
+        "Country": "United Arab Emirates",
+        "City": "Dubai",
+        "lat": "25.276987",
+        "lng": "55.296249"
+    },
+    {
+        "text": "Bangkok",
+        "size": 1.0,
+        "Country": "Thailand",
+        "City": "Bangkok",
+        "lat": "13.7563",
+        "lng": "100.5018"
+    }
+  ]
 }

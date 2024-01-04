@@ -1,17 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
-import ThreeGlobe from "three-globe";
-import lines from "@/public/JSON/lines.json";
 import map from "@/public/JSON/map.json";
 
-
 const Globe: React.FC = () => {
-  
   const containerRef = useRef<HTMLDivElement>(null);
+  // get the cityMap from the JSON file
+  const cityMap = map['Co-ordinates'];
 
-  /* ----------------------Boilerplat code for shader compilation------------------------ */
-  
   const vertexShader = `
     varying vec2 vertexUV;
     varying vec3 vertexNormal;
@@ -53,130 +49,196 @@ const Globe: React.FC = () => {
       gl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity;
     }
   `;
-
-    /* -------------------------Declare Mouse XY Position--------------------------- */
-
-  const mouse = useRef<{ x?: number; y?: number }>({});
-
-  const handleMouseMove = (event: { clientX: number; clientY: number; }) => {
-    mouse.current = {
-      x: (event.clientX / window.innerWidth) * 2 - 1,
-      y: -(event.clientY / window.innerHeight) * 2 + 1,
-    };
-  };
-  
-  const Globe = new ThreeGlobe({
-    waitForGlobeReady: true,
-    animateIn: true,
-  })
-
-  setTimeout(() => {
-    Globe.arcsData(lines.pulls)
-    .arcColor((e) => {
-      return e.status? "#9cff00":"#ff4000";
-    })
-    .arcAltitude((e) => {
-      return e.arcAlt;
-    })
-    .arcStroke((e) => {
-      return e.status? 0.5 : 0.3
-    })
-    .arcDashLength(0.9)
-    .arcDashGap(4)
-    .arcDashAnimateTime(1000)
-    .arcsTransitionDuration(1000)
-    .arcDashInitialGap((e) => e.order*1)
-    .labelsData(map.Map)
-    .labelColor(() => "#ffcb21")
-  })
   
   useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-
-    // Will run only on the client side
+    // Scene, camera, and renderer setup
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      innerWidth / innerHeight,
-      0.1,
-      1000
-    );
-
-    const renderer = new THREE.WebGLRenderer({antialias: true});
-    renderer.setSize(innerWidth, innerHeight);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor(new THREE.Color("#181C42"), 1);
 
-     /* ---------------------------Create 3D Object----------------------------- */
+    containerRef.current?.appendChild(renderer.domElement);
 
-    /*  Loading images asynchronously can sometimes cause timing issues. 
-        Ensure that the image is fully loaded before rendering the scene. 
-        Use the onload event of the TextureLoader to check when the image is ready: */
-    const textureLoader = new THREE.TextureLoader();
-
-    // Create Globe
     const sphere = new THREE.Mesh(
       new THREE.SphereGeometry(3, 50, 50),
-      new THREE.ShaderMaterial({ 
-        vertexShader ,
+      new THREE.ShaderMaterial({
+        vertexShader,
         fragmentShader,
-        uniforms: {       //declare all variable to pass through shader
+        uniforms: {
           globeTexture: {
-            value: textureLoader.load("/image/The-earth-at-night-2.jpg", () => {
-              animate();
-            })
+            value: new THREE.TextureLoader().load("/image/The-earth-at-night-2.jpg")
           }
         }
-       })
+      })
     );
 
     const group = new THREE.Group()
     group.add(sphere);
 
-    // Create Atmosphere
     const atmosphere = new THREE.Mesh(
-      new THREE.SphereGeometry(3, 50, 50),
-      new THREE.ShaderMaterial({ 
-        vertexShader: atmosphereVertexShader ,
+      new THREE.SphereGeometry(3.1, 50, 50),
+      new THREE.ShaderMaterial({
+        vertexShader: atmosphereVertexShader,
         fragmentShader: atmosphereFragmentShader,
         blending: THREE.AdditiveBlending,
         side: THREE.BackSide
-        })
+      })
     );
-
     atmosphere.scale.set(1.1, 1.1, 1.1);
-
-    scene.add(atmosphere); 
+    
+    scene.add(atmosphere);
     scene.add(group);
 
     camera.position.z = 10;
 
-    // Animation/rendering loop
-    function animate(): any {
-      requestAnimationFrame(animate);
+    const latLongToVector3 = (lat: number, lon: number, radius: number = 3) => {
+      const phi = (90 - lat) * (Math.PI / 180);
+      const theta = (lon + 180) * (Math.PI / 180);
+      const x = -(radius * Math.sin(phi) * Math.cos(theta));
+      const y = radius * Math.cos(phi);
+      const z = radius * Math.sin(phi) * Math.sin(theta);
+      return new THREE.Vector3(x, y, z);
+    };
 
-      // Rotate the sphere
-      sphere.rotation.y += 0.002; // Adjust the rotation speed as needed
-      const rotationValueX = mouse.current.x !== undefined ? (mouse.current.x as number) * 0.5 : 0;
-      const rotationValueY = mouse.current.y !== undefined ? (mouse.current.y as number) * 0.3 : 0;
-      gsap.to(group.rotation, { 
-        y: rotationValueX,
-        x: -rotationValueY,
-        duration: 2 
+    // Function to add arcs to the globe
+    const addArcsToGlobe = (arcData: any[]) => {
+      let animateData: THREE.BufferGeometry<THREE.NormalBufferAttributes>[] = [];
+      arcData.forEach(data => {
+        const startPoint = latLongToVector3(data.startLat, data.startLng);
+        const endPoint = latLongToVector3(data.endLat, data.endLng);
+        const midPoint1 = startPoint.clone().lerp(endPoint, 0.25).add(new THREE.Vector3(0, altitude, 0));
+        const midPoint2 = startPoint.clone().lerp(endPoint, 0.75).add(new THREE.Vector3(0, altitude, 0));
+        const curve = new THREE.CubicBezierCurve3(startPoint, midPoint1, midPoint2, endPoint);
+        const points = curve.getPoints(50);
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        const material = new THREE.LineBasicMaterial({ color: 0xff0000 });
+        const arc = new THREE.Line(geometry, material);
+        
+        scene.add(arc);
+        group.add(arc);
+        animateData.push(geometry);
       });
+      return animateData;
+    };
+
+    let currentArcs = 0; // Tracks the current number of arcs
+    const maxArcs = 20;   // Maximum number of arcs allowed
+    const arcDelay = 0; // Delay before starting each arc animation
+    
+    function animateArcs(number = 0, startPoint?: [number, number], endPoint?: [number, number]) {
+      if (currentArcs >= maxArcs) {
+        // Maximum number of arcs reached, do not create more
+        return;
+      }
+    
+      // Generate arc data
+      let animateData;
+      if (startPoint && endPoint) {
+        animateData = addArcsToGlobe([{
+          startLat: startPoint[0],
+          startLng: startPoint[1],
+          endLat: endPoint[0],
+          endLng: endPoint[1],
+          color: 'red'
+        }]);
+      } else {
+        animateData = addArcsToGlobe(generateRandomArcsData(number));
+      }
+    
+      animateData.forEach((data) => {
+        data.setDrawRange(0, 0);
+        const animObject = { start: 0, end: 0 };
+        const totalLength = data.attributes.position.array.length / 3;
+    
+        gsap.delayedCall(arcDelay, () => {
+          currentArcs++;
+          gsap.to(animObject, {
+            end: totalLength,
+            onUpdate: function() {
+              data.setDrawRange(animObject.start, animObject.end - animObject.start);
+            },
+            duration: 2,
+            ease: "power1.inOut",
+            onComplete: function() {
+              gsap.to(animObject, {
+                start: totalLength,
+                onUpdate: function() {
+                  data.setDrawRange(animObject.start, animObject.end - animObject.start);
+                },
+                duration: 2,
+                ease: "power1.inOut",
+                onComplete: function() {
+                  animObject.start = animObject.end = 0;
+                  currentArcs--; 
+                  if (currentArcs < maxArcs) {
+                    animateArcs(2);
+                  }
+                }
+              });
+            }
+          });
+        });
+      });
+    }
+
+    // Function to convert lat/long to globe rotation
+    const latLongToRotation = (lat: number, lon: number) => {
+      const phi = (90 - lat) * (Math.PI / 180);
+      const theta = (lon + 180) * (Math.PI / 180);
+      return new THREE.Euler(phi, theta, 0, 'XYZ');
+    };
+
+    // Set the initial rotation of the globe to center on Germany
+    const germanyCoordinates = { lat: 51, lon: 70 };
+    group.rotation.copy(latLongToRotation(germanyCoordinates.lat, germanyCoordinates.lon));
+
+    // Function to rotate the globe
+    function animate() {
+      requestAnimationFrame(animate);
+      group.rotation.y += 0.001;
       renderer.render(scene, camera);
     }
     animate();
 
-    containerRef.current?.appendChild(renderer.domElement);
+    function generateRandomArcsData(numberOfArcs: number) {
+      const arcsData = [];
+      for (let i = 0; i < numberOfArcs; i++) {
+        // Randomly pick two different cities
+        const city1 = cityMap[Math.floor(Math.random() * cityMap.length)];
+        let city2 = cityMap[Math.floor(Math.random() * cityMap.length)];
+        while (city1.City === city2.City) {
+          city2 = cityMap[Math.floor(Math.random() * cityMap.length)];
+        }
+        const arcData = {
+          startLat: parseFloat(city1.lat),
+          startLng: parseFloat(city1.lng),
+          endLat: parseFloat(city2.lat),
+          endLng: parseFloat(city2.lng),
+          color: 'red'
+        };
+        arcsData.push(arcData);
+      }
+      return arcsData;
+    }
+
+    // Setting the altitude of the arcs
+    const altitude = 1;
+    // Function Call to animate arcs
+    // Just pass the number of arcs you want to animate
+    // animateArcs(10);
+    // Or pass the start and end point of the arc
+    // Berlin to New York
+    // animateArcs(0, [50.1151, 8.6701], [40.7128, -74.0060]);
+    animateArcs(0, [50.1, 8.6], [40.7, -74]);
 
     return () => {
       renderer.dispose();
-      window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []); // The empty dependency array ensures that useEffect runs only once on mount
+  }, []);
 
-  return <div ref={containerRef} />;
+  return <div ref={containerRef} style={{ width: '100%', height: '100vh' }} />;
 };
 
 export default Globe;
